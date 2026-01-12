@@ -1,58 +1,348 @@
 <!DOCTYPE html>
-<html lang="pt">
-  <head>
+<html lang="pt-PT">
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Filipa Ferreira | Psicoterapeuta</title>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
+    <meta name="description" content="Filipa Ferreira - Psicóloga e Psicoterapeuta. Serviços de psicoterapia individual, terapia de casal, terapia familiar, parentalidade e orientação vocacional." />
+    <title>Filipa Ferreira | Psicóloga e Psicoterapeuta</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">Filipa Ferreira</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#sobre-mim" class="nav-link">Sobre Mim</a></li>
+                <li class="dropdown">
+                    <a href="#servicos" class="nav-link dropdown-toggle">Serviços</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#psicoterapia-individual">Psicoterapia Individual</a></li>
+                        <li><a href="#terapia-casal">Terapia de Casal</a></li>
+                        <li><a href="#terapia-familiar">Terapia Familiar</a></li>
+                        <li><a href="#terapia-parentalidade">Terapia para a Parentalidade</a></li>
+                        <li><a href="#orientacao-vocacional">Orientação Vocacional</a></li>
+                    </ul>
+                </li>
+                <li><a href="#onde-estou" class="nav-link">Onde Estou</a></li>
+                <li><a href="#contactar" class="nav-link">Contactar</a></li>
+                <li><a href="#insights" class="nav-link">Insights</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-      body {
-        margin: 0;
-        padding: 0;
-        background-color: #f6f1ea;
-        color: #3a2e2a;
-        font-family: 'Playfair Display', serif;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-      }
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Bem-vindo</h1>
+            <p>Um espaço seguro para ouvir, compreender e transformar</p>
+            <svg class="divider-svg" viewBox="0 0 100 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 10 10 Q 30 5 50 10 T 90 10" stroke="#d3b5b7" stroke-width="2" fill="none" stroke-linecap="round"/>
+            </svg>
+        </div>
+    </section>
 
-      h1 {
-        font-size: 2.8rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-      }
+    <!-- Sobre Mim Section -->
+    <section id="sobre-mim" class="section">
+        <div class="container">
+            <h2>Sobre Mim</h2>
+            <div class="tabs">
+                <button class="tab-button active" data-tab="a-filipa">A Filipa</button>
+                <button class="tab-button" data-tab="formacao">Formação</button>
+            </div>
 
-      p {
-        margin: 0.3rem 0;
-        font-size: 1.1rem;
-      }
+            <!-- A Filipa Tab -->
+            <div id="a-filipa" class="tab-content active">
+                <div class="content-box">
+                    <h3>Bem-vindos</h3>
+                    <p>O meu nome é Filipa Ferreira e sou psicóloga, psicoterapeuta, terapeuta familiar e de casal.</p>
+                    <p>Acredito que cada pessoa carrega dentro de si diferentes partes, emoções e formas de se proteger, que se foram construindo ao longo da vida como resposta às experiências vividas. Algumas dessas partes ajudam-nos a avançar, outras surgem em momentos de dor, medo ou insegurança — todas com uma intenção de proteção.</p>
+                    <p>A forma como sentimos, pensamos e nos relacionamos hoje está profundamente ligada às experiências emocionais que vivemos ao longo da nossa história. Desde cedo, vamos aprendendo maneiras de nos proteger, de nos adaptar aos outros e de responder ao mundo à nossa volta. Algumas dessas formas continuam a servir-nos. Outras, embora tenham sido importantes em determinado momento da vida, podem tornar-se fontes de sofrimento no presente.</p>
+                    <p>No meu trabalho terapêutico, procuro ajudar cada pessoa a reconhecer esses padrões emocionais e relacionais, compreendendo como surgiram e de que forma influenciam a autoestima, as relações e as escolhas atuais. Muitas vezes, estão ligados a necessidades emocionais que não foram plenamente atendidas e que continuam a manifestar-se em forma de ansiedade, insegurança, dificuldade em confiar, medo do abandono ou exigência excessiva consigo próprio.</p>
+                    <p>O processo terapêutico é um caminho de maior consciência e reparação emocional, onde, com tempo e segurança, é possível desenvolver novas formas de cuidar de si, de se relacionar e de responder às dificuldades do dia a dia. A mudança acontece quando aprendemos a escutar as nossas emoções com mais gentileza e a criar respostas mais ajustadas às necessidades do presente.</p>
+                    <p>No trabalho com casais e famílias, procuro compreender como estas experiências individuais se encontram e se influenciam mutuamente. Muitas vezes, os conflitos, afastamentos ou dificuldades de comunicação estão ligados a necessidades emocionais profundas — como o desejo de segurança, reconhecimento, proximidade ou autonomia — que nem sempre conseguem ser expressas de forma clara.</p>
+                    <p>O processo terapêutico oferece um espaço seguro para desacelerar, escutar e compreender o que está por trás dos comportamentos e das reações emocionais. Em conjunto, trabalhamos para identificar padrões que se repetem, criar novas formas de diálogo e promover relações mais conscientes, empáticas e equilibradas.</p>
+                    <p>A minha prática assenta numa relação terapêutica próxima, empática e segura, onde cada pessoa é acompanhada com respeito pelo seu ritmo, pela sua história e pelos seus recursos internos. Acredito que, quando existe um espaço verdadeiramente acolhedor, a transformação torna-se possível.</p>
+                </div>
+            </div>
 
-      .divider {
-        width: 60px;
-        height: 2px;
-        background-color: #3a2e2a;
-        margin: 1rem auto;
-      }
+            <!-- Formação Tab -->
+            <div id="formacao" class="tab-content">
+                <div class="content-box">
+                    <h3>Formação Académica e Profissional</h3>
+                    <ul class="formation-list">
+                        <li>
+                            <strong>Licenciatura em Psicologia</strong>
+                            <span>ISPA - Instituto Universitário de Ciências Psicológicas, Sociais e da Vida</span>
+                        </li>
+                        <li>
+                            <strong>Certificação Pedagogia Montessori</strong>
+                            <span>International Montessori Institute</span>
+                        </li>
+                        <li>
+                            <strong>Certificação Disciplina Positiva para Primeira Infância</strong>
+                            <span>Positive Discipline Association</span>
+                        </li>
+                        <li>
+                            <strong>Liderança, Agilidade e Adaptabilidade</strong>
+                            <span>Nova SBE - Professor Nadim Habib</span>
+                        </li>
+                        <li>
+                            <strong>Intervenção em Crise e Primeiros Socorros Psicológicos</strong>
+                            <span>IEFP</span>
+                        </li>
+                        <li>
+                            <strong>Especialização em Psicoterapia de Intervenção Sistémica e Familiar</strong>
+                            <span>Sociedade Portuguesa de Terapia Familiar</span>
+                        </li>
+                        <li>
+                            <strong>Intervenção Sistémica nos Relacionamentos e Parentalidade</strong>
+                            <span>Sociedade Portuguesa de Terapia Familiar</span>
+                        </li>
+                        <li>
+                            <strong>LGBTQ+ Intervenção Sistémica</strong>
+                            <span>Sociedade Portuguesa de Terapia Familiar</span>
+                        </li>
+                        <li>
+                            <strong>Não Monogamia Consensual</strong>
+                            <span>Sociedade Portuguesa de Terapia Familiar</span>
+                        </li>
+                        <li>
+                            <strong>Sexologia Clínica: Conceitos Básicos para a Terapia Familiar</strong>
+                            <span>Sociedade Portuguesa de Terapia Familiar</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      footer {
-        position: absolute;
-        bottom: 20px;
-        font-size: 0.9rem;
-        color: #6b5b52;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Filipa Ferreira</h1>
-    <div class="divider"></div>
-    <p>Psicoterapeuta · Terapeuta de Casal · Terapeuta Familiar</p>
-    <p>📞 938 985 876</p>
+    <!-- Divider -->
+    <div class="section-divider"></div>
 
-    <footer>© 2025 Filipa Ferreira</footer>
-  </body>
+    <!-- Serviços Section -->
+    <section id="servicos" class="section alternate">
+        <div class="container">
+            <h2>Serviços</h2>
+            <div class="services-grid">
+                <!-- Psicoterapia Individual -->
+                <div id="psicoterapia-individual" class="service-card">
+                    <h3>Psicoterapia Individual</h3>
+                    <p>A psicoterapia individual é um espaço seguro, confidencial e acolhedor, criado para que possa olhar para si com mais profundidade, clareza e compaixão. Um lugar onde é possível parar, sentir e compreender o que se passa internamente, sem pressa e sem julgamentos.</p>
+                    <p>Neste processo, olhamos para a pessoa como um todo — a sua história, as relações que a moldaram, as emoções que carrega e as formas que encontrou para lidar com a dor, a insegurança ou o medo. Muitas das dificuldades que surgem no presente estão ligadas a experiências passadas e a padrões emocionais que se foram construindo ao longo do tempo, muitas vezes como forma de proteção.</p>
+                    <p>Ao longo da psicoterapia, trabalhamos para identificar esses padrões, compreender a sua origem e reconhecer as necessidades emocionais que lhes estão associadas. A partir dessa compreensão, é possível desenvolver novas formas de relação consigo próprio e com os outros, mais seguras, flexíveis e ajustadas à realidade atual.</p>
+                    <p>As emoções têm um papel central neste processo. Aprender a reconhecê-las, escutá-las e dar-lhes significado permite reduzir o sofrimento e aumentar a capacidade de resposta às situações do dia a dia. Em terapia, as emoções são acolhidas como sinais importantes, que ajudam a orientar escolhas mais conscientes.</p>
+                    <p>Este trabalho inclui também a atenção às diferentes partes internas que compõem a experiência de cada pessoa — partes que protegem, que se adaptam, que carregam feridas antigas ou que procuram ser cuidadas. Criar espaço para que todas possam ser compreendidas e integradas favorece maior equilíbrio emocional, autoconfiança e autenticidade.</p>
+                    <p>A relação terapêutica é um elemento fundamental deste percurso. Num ambiente de empatia, segurança e respeito pelo seu ritmo, o processo terapêutico torna-se um caminho de crescimento, reparação emocional e construção de sentido, permitindo-lhe viver com maior coerência interna e bem-estar.</p>
+                    <div class="service-price">Valor: <strong>60€</strong> por sessão</div>
+                </div>
+
+                <!-- Terapia de Casal -->
+                <div id="terapia-casal" class="service-card">
+                    <h3>Terapia de Casal</h3>
+                    <p>A terapia de casal é um espaço seguro e estruturado, pensado para ajudar dois parceiros a compreenderem melhor a sua relação, a forma como comunicam e os padrões que se repetem ao longo do tempo. Muitas vezes, os conflitos não surgem por falta de amor, mas por dificuldades em expressar necessidades emocionais de forma clara e segura.</p>
+                    <p>No acompanhamento terapêutico, olhamos para a relação como um sistema vivo, onde cada pessoa traz a sua história, as suas experiências emocionais e as formas que aprendeu para se proteger e se ligar ao outro. Estas experiências influenciam a maneira como cada parceiro reage perante o conflito, a proximidade, a distância ou a vulnerabilidade.</p>
+                    <p>Grande parte do trabalho passa por identificar padrões de interação que mantêm o sofrimento — como ciclos de crítica, afastamento, defesa ou silêncio — e compreender o que está por detrás dessas reações. Frequentemente, estas respostas estão ligadas a emoções profundas e a necessidades emocionais que não estão a ser reconhecidas ou atendidas dentro da relação.</p>
+                    <p>A terapia ajuda o casal a desenvolver uma comunicação mais consciente e respeitosa, promovendo a escuta ativa, a validação emocional e a expressão de sentimentos de forma mais clara e empática. Ao mesmo tempo, trabalha-se a construção de um vínculo mais seguro, onde ambos se sintam vistos, valorizados e emocionalmente disponíveis um para o outro.</p>
+                    <p>Ao longo do processo, são também explorados padrões relacionais de fundo que cada parceiro traz da sua história pessoal e que influenciam a relação atual — como medos de abandono, dificuldade em confiar, exigência excessiva ou tendência para evitar o conflito. Tornar estes padrões conscientes permite ao casal escolher respostas diferentes e construir novas formas de se relacionar.</p>
+                    <p>A terapia de casal não se centra apenas na resolução de conflitos, mas também no fortalecimento da amizade, da intimidade emocional e do compromisso, ajudando o casal a criar uma relação mais equilibrada, segura e satisfatória.</p>
+                    <div class="service-price">Valor: <strong>70€</strong> por sessão</div>
+                </div>
+
+                <!-- Terapia Familiar -->
+                <div id="terapia-familiar" class="service-card">
+                    <h3>Terapia Familiar</h3>
+                    <p>A terapia familiar é um espaço de encontro e diálogo, onde a família é vista como um sistema vivo, em constante transformação. Cada membro influencia e é influenciado pelos restantes, e muitas das dificuldades individuais fazem sentido quando olhadas à luz das relações familiares e do contexto em que surgem.</p>
+                    <p>As famílias atravessam diferentes fases ao longo da vida — nascimento dos filhos, entrada na adolescência, saídas de casa, separações, recomposição familiar, doença, luto — e cada transição exige ajustamentos emocionais e relacionais. Quando estes momentos são vividos com elevada tensão, dor ou falta de recursos, podem surgir conflitos, afastamentos ou sintomas que afetam o bem-estar de todos.</p>
+                    <p>No processo terapêutico, procuramos compreender como a família se organiza, como comunica, que papéis cada elemento ocupa e que padrões de relação se repetem ao longo do tempo. Muitas vezes, existem regras implícitas, lealdades invisíveis ou expectativas herdadas que condicionam a forma como cada pessoa se expressa e se posiciona dentro da família.</p>
+                    <p>A terapia familiar também permite olhar para a história das gerações anteriores, reconhecendo que experiências de perda, trauma, silêncios ou acontecimentos marcantes podem continuar a ter impacto nas gerações atuais. Tornar estas influências visíveis ajuda a família a compreender melhor o presente e a libertar-se de padrões que já não servem.</p>
+                    <p>Um aspeto central do trabalho é dar espaço às diferentes narrativas familiares — as histórias que cada membro conta sobre si, sobre os outros e sobre a família como um todo. Ao escutar e reorganizar estas narrativas, abre-se a possibilidade de criar novos significados, mais integradores e menos centrados no problema.</p>
+                    <p><strong>Ao longo do acompanhamento, a terapia ajuda a:</strong></p>
+                    <ul>
+                        <li>Melhorar a comunicação e o entendimento mútuo</li>
+                        <li>Tornar mais claras as fronteiras, responsabilidades e papéis familiares</li>
+                        <li>Promover relações mais equilibradas e cooperantes</li>
+                        <li>Apoiar a família na construção de soluções ajustadas à sua realidade</li>
+                    </ul>
+                    <p>A terapia familiar oferece um espaço seguro, respeitador e não julgador, onde cada voz é importante e onde a mudança acontece através da compreensão, da empatia e do fortalecimento dos vínculos.</p>
+                    <div class="service-price">Valor: <strong>80€</strong> por sessão</div>
+                </div>
+
+                <!-- Terapia para a Parentalidade -->
+                <div id="terapia-parentalidade" class="service-card">
+                    <h3>Terapia para a Parentalidade</h3>
+                    <p>Ser pai ou mãe é uma das experiências mais intensas e transformadoras da vida. Pode ser profundamente bonita — e, ao mesmo tempo, avassaladora.</p>
+                    <p>Se é pai ou mãe de primeira viagem, talvez se sinta inseguro, cansado, cheio de dúvidas e a questionar-se constantemente se está a fazer "o suficiente" ou "da forma certa". Se já tem filhos mais crescidos, pode estar a atravessar fases exigentes: birras, desafios na escola, dificuldades emocionais, conflitos, mudanças no comportamento ou momentos em que sente que perdeu o rumo.</p>
+                    <p>Nada disto significa que esteja a falhar. Significa apenas que cuidar também cansa — e que ninguém nasce a saber ser pai ou mãe.</p>
+                    <p>A terapia para a parentalidade é um espaço de apoio, reflexão e crescimento, pensado para o acompanhar enquanto pai ou mãe, respeitando a sua história, os seus valores e a singularidade da sua família.</p>
+                    <p><strong>Um espaço para pensar a parentalidade com mais calma</strong></p>
+                    <p>Neste acompanhamento, não há receitas prontas nem julgamentos. Há escuta, compreensão e apoio para lidar com os desafios reais do dia a dia. Juntos, trabalhamos para:</p>
+                    <ul>
+                        <li>Compreender melhor o comportamento do seu filho</li>
+                        <li>Ajustar expectativas à fase de desenvolvimento em que ele se encontra</li>
+                        <li>Encontrar formas mais eficazes e respeitosas de colocar limites</li>
+                        <li>Melhorar a comunicação e o vínculo emocional</li>
+                        <li>Reduzir o stress, a culpa e o cansaço emocional</li>
+                    </ul>
+                    <p><strong>Temas que podem ser trabalhados:</strong></p>
+                    <ul>
+                        <li>Definição de limites e regras de forma firme e afetuosa</li>
+                        <li>Gestão de birras, comportamentos desafiantes ou dificuldades emocionais</li>
+                        <li>Comunicação mais clara e empática com os filhos</li>
+                        <li>Apoio ao desenvolvimento emocional, social e escolar</li>
+                        <li>Ajustamento a transições do ciclo de vida (nascimento de irmãos, entrada na escola, adolescência, separações)</li>
+                        <li>Cuidar da relação parental sem perder de vista o bem-estar individual</li>
+                    </ul>
+                    <p><strong>Como funciona o acompanhamento:</strong></p>
+                    <p>O processo é adaptado à realidade de cada família. Pode incluir sessões individuais com os pais, sessões conjuntas ou momentos de reflexão orientada, sempre com foco nas necessidades concretas da criança e dos cuidadores. Ao longo do acompanhamento, são construídas estratégias práticas e personalizadas, pensadas para o dia-a-dia real da família — aquilo que é possível, sustentável e coerente com quem são enquanto pais.</p>
+                    <p><strong>Cuidar da parentalidade é cuidar da família inteira</strong></p>
+                    <p>A terapia para a parentalidade ajuda a fortalecer a relação entre pais e filhos, aumenta a confiança parental e promove um ambiente familiar mais seguro, previsível e afetuoso. Cuidar dos filhos começa, muitas vezes, por cuidar de quem cuida.</p>
+                    <p>Se sente que este é um momento exigente da sua parentalidade, saiba que não precisa de o atravessar sozinho. Estou aqui para caminhar consigo.</p>
+                    <div class="service-price">Valor: <strong>70€</strong> por sessão</div>
+                </div>
+
+                <!-- Orientação Vocacional -->
+                <div id="orientacao-vocacional" class="service-card">
+                    <h3>Orientação Vocacional</h3>
+                    <p>Chegar ao 9.º ou ao 12.º ano e ter de decidir o "próximo passo" pode ser confuso, assustador e até frustrante. É normal ter dúvidas, sentir pressão, medo de errar ou a sensação de que "toda a gente já sabe o que quer", menos tu.</p>
+                    <p><strong>Talvez sintas que:</strong></p>
+                    <ul>
+                        <li>Gostas de várias coisas, mas não sabes qual escolher</li>
+                        <li>Não te identificas com nenhuma opção em concreto</li>
+                        <li>Tens medo de desiludir os outros ou de fazer a escolha errada</li>
+                        <li>Estás cansado de ouvir "isto é uma decisão para a vida toda"</li>
+                    </ul>
+                    <p>A orientação vocacional existe precisamente para isto: para não teres de fazer este caminho sozinho. Aqui, fazemos o caminho juntos, ao teu ritmo.</p>
+                    <p><strong>Como funciona o processo?</strong></p>
+                    <p>Tudo começa com uma primeira conversa contigo. É um momento para te conhecer melhor — quem és, como tens vivido a escola, o que te motiva, o que te preocupa e como imaginas o teu futuro. A presença dos pais nesta fase pode acontecer ou não, dependendo do que for mais adequado para ti.</p>
+                    <p>Depois dessa primeira sessão, o processo continua normalmente ao longo de quatro sessões (em alguns casos, podem ser necessárias mais). Ao longo deste percurso, vais realizar diferentes atividades e provas pensadas para te ajudar a descobrir:</p>
+                    <ul>
+                        <li>O que realmente te interessa e desperta motivação</li>
+                        <li>As áreas onde te sentes mais confortável e confiante</li>
+                        <li>As tuas capacidades e forma de aprender</li>
+                        <li>A maneira como pensas, resolves problemas e tomas decisões</li>
+                    </ul>
+                    <p>Nada disto é sobre "passar ou falhar". É sobre conheceres-te melhor.</p>
+                    <p><strong>No final do processo:</strong></p>
+                    <p>Recebes um relatório claro e organizado, onde está desenhado o teu perfil vocacional. Juntos, vamos construir um projeto académico e/ou profissional, com sugestões de cursos, áreas de estudo e caminhos possíveis que façam sentido para ti — não apenas para o momento atual, mas também para quem és e quem queres vir a ser.</p>
+                    <p><strong>Mais do que dar respostas prontas, este processo ajuda-te a:</strong></p>
+                    <ul>
+                        <li>Ganhar confiança nas tuas escolhas</li>
+                        <li>Reduzir a ansiedade em relação ao futuro</li>
+                        <li>Sentir que tens opções e possibilidades reais</li>
+                        <li>Tomar decisões mais conscientes e seguras</li>
+                    </ul>
+                    <p><strong>Lembra-te:</strong> Não tens de saber tudo agora. Não tens de ter a certeza absoluta. E não tens de decidir sozinho.</p>
+                    <p>A orientação vocacional é um caminho de descoberta — e vamos fazer esse caminho juntos.</p>
+                    <div class="service-price">Valor: Mínimo de 5 sessões — <strong>250€</strong></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Onde Estou Section -->
+    <section id="onde-estou" class="section">
+        <div class="container">
+            <h2>Onde Estou</h2>
+            <div class="location-content">
+                <p>Informação de localização em breve</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Contactar Section -->
+    <section id="contactar" class="section alternate">
+        <div class="container">
+            <h2>Contactar</h2>
+            <div class="contact-options">
+                <a href="https://wa.me/351938985876" target="_blank" class="contact-card whatsapp">
+                    <div class="contact-icon">💬</div>
+                    <h3>WhatsApp</h3>
+                    <p>Enviar Mensagem</p>
+                </a>
+                <a href="mailto:contacto@filipaferreirapsicologia.pt" class="contact-card email">
+                    <div class="contact-icon">✉️</div>
+                    <h3>E-mail</h3>
+                    <p>Enviar E-mail</p>
+                </a>
+                <div class="contact-card form" onclick="scrollToForm()" style="cursor: pointer;">
+                    <div class="contact-icon">📋</div>
+                    <h3>Formulário</h3>
+                    <p>Preencher Formulário de Contacto</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div id="form-section" class="contact-form-container">
+                <h3>Formulário de Contacto</h3>
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/mnjjqzkr" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nome *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Serviço de Interesse *</label>
+                        <select id="service" name="service" required>
+                            <option value="">Selecione um serviço</option>
+                            <option value="psicoterapia-individual">Psicoterapia Individual</option>
+                            <option value="terapia-casal">Terapia de Casal</option>
+                            <option value="terapia-familiar">Terapia Familiar</option>
+                            <option value="terapia-parentalidade">Terapia para a Parentalidade</option>
+                            <option value="orientacao-vocacional">Orientação Vocacional</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem *</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="section-divider"></div>
+
+    <!-- Insights Section -->
+    <section id="insights" class="section">
+        <div class="container">
+            <h2>Insights</h2>
+            <div class="insights-placeholder">
+                <p>Artigos e insights em breve</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Filipa Ferreira. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
+
