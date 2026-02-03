@@ -431,11 +431,20 @@
     <!-- Cookie Banner -->
     <div class="cookie-banner" id="cookieBanner">
         <div class="cookie-message">
-            <p>Este website utiliza cookies para melhorar a sua experiência. Ao continuar, você concorda com nossa <a href="#" target="_blank">política de cookies</a>.</p>
+            <p>Este website utiliza cookies para melhorar a sua experiência. Ao continuar, você concorda com nossa <a href="#" id="cookiePolicyLink">política de cookies</a>.</p>
         </div>
         <div class="cookie-buttons">
             <button class="cookie-btn cookie-btn-decline" onclick="closeCookieBanner()">Rejeitar</button>
             <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Aceitar</button>
+        </div>
+    </div>
+
+    <div class="cookie-policy-modal" id="cookiePolicyModal" aria-hidden="true">
+        <div class="cookie-policy-content" role="dialog" aria-modal="true" aria-labelledby="cookiePolicyTitle">
+            <h3 id="cookiePolicyTitle">Política de Cookies</h3>
+            <p>Utilizamos cookies essenciais para garantir o funcionamento do site e cookies de medição para compreender o uso e melhorar a experiência.</p>
+            <p>Os cookies de medição só são ativados após o seu consentimento. Pode alterar a sua escolha a qualquer momento limpando os cookies do navegador.</p>
+            <button class="cookie-btn cookie-btn-accept" id="cookiePolicyClose">Fechar</button>
         </div>
     </div>
 

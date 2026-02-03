@@ -26,7 +26,10 @@ if (hamburger) {
 
 // Close menu when a link is clicked
 document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (e) => {
+        if (link.classList.contains('dropdown-toggle') && window.innerWidth <= 768) {
+            return;
+        }
         navMenu.classList.remove('active');
         hamburger.classList.remove('active');
     });
@@ -183,6 +186,7 @@ accordionButtons.forEach(button => {
     button.addEventListener('click', () => {
         const serviceId = button.getAttribute('data-service');
         const content = document.getElementById(serviceId);
+        const currentScroll = window.scrollY;
 
         // Close all others
         accordionButtons.forEach(b => {
@@ -190,13 +194,24 @@ accordionButtons.forEach(button => {
                 b.classList.remove('active');
                 const id = b.getAttribute('data-service');
                 const c = document.getElementById(id);
-                if (c) c.classList.remove('active');
+                if (c) {
+                    c.classList.remove('active');
+                    c.style.maxHeight = null;
+                }
             }
         });
 
         // Toggle current
         button.classList.toggle('active');
-        if (content) content.classList.toggle('active');
+        if (content) {
+            const isActive = content.classList.toggle('active');
+            content.style.maxHeight = isActive ? `${content.scrollHeight}px` : null;
+        }
+
+        // Keep the accordion header anchored in the viewport
+        requestAnimationFrame(() => {
+            window.scrollTo({ top: currentScroll });
+        });
     });
 });
 
