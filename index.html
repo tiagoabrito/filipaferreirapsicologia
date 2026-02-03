@@ -6,14 +6,6 @@
     <meta name="description" content="Filipa Ferreira - Psicóloga e Psicoterapeuta. Serviços de psicoterapia individual, terapia de casal, terapia familiar, parentalidade e orientação vocacional." />
     <title>Filipa Ferreira | Psicóloga e Psicoterapeuta</title>
     <link rel="stylesheet" href="styles.css" />
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -24,16 +16,7 @@
             </div>
             <ul class="nav-menu">
                 <li><a href="#sobre-mim" class="nav-link">Sobre Mim</a></li>
-                <li class="dropdown">
-                    <a href="#servicos" class="nav-link dropdown-toggle">Serviços</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#psicoterapia-individual">Psicoterapia Individual</a></li>
-                        <li><a href="#terapia-casal">Terapia de Casal</a></li>
-                        <li><a href="#terapia-familiar">Terapia Familiar</a></li>
-                        <li><a href="#terapia-parentalidade">Terapia para a Parentalidade</a></li>
-                        <li><a href="#orientacao-vocacional">Orientação Vocacional</a></li>
-                    </ul>
-                </li>
+                <li><a href="#servicos" class="nav-link">Serviços</a></li>
                 <li><a href="#onde-estou" class="nav-link">Onde Estou</a></li>
                 <li><a href="#contactar" class="nav-link">Contactar</a></li>
                 <li><a href="#insights" class="nav-link">Insights</a></li>
@@ -431,7 +414,7 @@
     <!-- Cookie Banner -->
     <div class="cookie-banner" id="cookieBanner">
         <div class="cookie-message">
-            <p>Este website utiliza cookies para melhorar a sua experiência. Ao continuar, você concorda com nossa <a href="#" id="cookiePolicyLink">política de cookies</a>.</p>
+            <p>Este website utiliza cookies para melhorar a sua experiência. Ao continuar, você concorda com nossa <a href="politica-cookies.html">política de cookies</a>.</p>
         </div>
         <div class="cookie-buttons">
             <button class="cookie-btn cookie-btn-decline" onclick="closeCookieBanner()">Rejeitar</button>
@@ -439,16 +422,25 @@
         </div>
     </div>
 
-    <div class="cookie-policy-modal" id="cookiePolicyModal" aria-hidden="true">
-        <div class="cookie-policy-content" role="dialog" aria-modal="true" aria-labelledby="cookiePolicyTitle">
-            <h3 id="cookiePolicyTitle">Política de Cookies</h3>
-            <p>Utilizamos cookies essenciais para garantir o funcionamento do site e cookies de medição para compreender o uso e melhorar a experiência.</p>
-            <p>Os cookies de medição só são ativados após o seu consentimento. Pode alterar a sua escolha a qualquer momento limpando os cookies do navegador.</p>
-            <button class="cookie-btn cookie-btn-accept" id="cookiePolicyClose">Fechar</button>
-        </div>
-    </div>
-
     <script src="script.js"></script>
+    <script>
+      // Analytics only loads after cookie consent
+      function initGoogleAnalytics() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NGHXKH4XZZ');
+      }
+
+      // Check if user already accepted cookies
+      if (localStorage.getItem('cookieConsent') === 'accepted') {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-NGHXKH4XZZ';
+        document.head.appendChild(script);
+        script.onload = initGoogleAnalytics;
+      }
+    </script>
 </body>
 </html>
 

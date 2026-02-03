@@ -26,7 +26,7 @@ if (hamburger) {
 
 // Close menu when a link is clicked
 document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', (e) => {
+    link.addEventListener('click', () => {
         if (link.classList.contains('dropdown-toggle') && window.innerWidth <= 768) {
             return;
         }
@@ -99,7 +99,6 @@ if (contactForm) {
         if (!emailPattern.test(email)) {
             e.preventDefault();
             alert('Por favor, insira um e-mail válido.');
-            return;
         }
 
         // Form will be submitted to Formspree
@@ -158,6 +157,7 @@ window.addEventListener('scroll', () => {
 function acceptCookies() {
     localStorage.setItem('cookieConsent', 'accepted');
     closeCookieBanner();
+    loadGoogleAnalytics();
 }
 
 function closeCookieBanner() {
@@ -165,6 +165,19 @@ function closeCookieBanner() {
     if (banner) {
         banner.classList.add('hidden');
     }
+}
+
+function loadGoogleAnalytics() {
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+    document.head.appendChild(script);
+    script.onload = function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    };
 }
 
 // Show cookie banner if no consent
@@ -175,8 +188,8 @@ window.addEventListener('load', () => {
         if (banner) {
             banner.classList.remove('hidden');
         }
-    } else {
-        closeCookieBanner();
+    } else if (consent === 'accepted') {
+        loadGoogleAnalytics();
     }
 });
 
