@@ -103,6 +103,16 @@ strong {
     align-items: center;
 }
 
+.logo-img {
+    height: 65px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
 .logo-text {
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
@@ -304,6 +314,30 @@ strong {
     width: 120px;
     height: 30px;
     margin: 0 auto;
+}
+
+/* ===== HERO LOGO SECTION ===== */
+.hero-logo {
+    min-height: 90vh;
+    background: linear-gradient(180deg, var(--white) 0%, var(--calm-light) 100%);
+}
+
+.hero-logo-img {
+    max-width: 600px;
+    width: 90%;
+    height: auto;
+    animation: fadeInDown 0.8s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ===== SECTIONS ===== */
@@ -521,7 +555,7 @@ strong {
     background-color: var(--white);
     padding: 2.5rem;
     border-radius: 8px;
-    max-width: 600px;
+    max-width: 100%;
     margin: 0 auto;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
@@ -631,6 +665,184 @@ a:visited {
     color: var(--grounded-comfort);
 }
 
+/* ===== COOKIE BANNER ===== */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--text-dark);
+    color: var(--white);
+    padding: 1.5rem 2rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    z-index: 999;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.cookie-banner.hidden {
+    display: none;
+}
+
+.cookie-message {
+    flex: 1;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.cookie-message a {
+    color: var(--soft-embrace);
+    text-decoration: underline;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.cookie-btn {
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.cookie-btn-accept {
+    background-color: var(--soft-embrace);
+    color: var(--white);
+}
+
+.cookie-btn-accept:hover {
+    background-color: var(--grounded-comfort);
+}
+
+.cookie-btn-decline {
+    background-color: transparent;
+    color: var(--white);
+    border: 1px solid var(--white);
+}
+
+.cookie-btn-decline:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ===== SERVICES ACCORDION ===== */
+.services-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-button {
+    width: 100%;
+    padding: 1.5rem;
+    background-color: var(--white);
+    border: none;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    font-family: 'Playfair Display', serif;
+}
+
+.accordion-button:hover {
+    background-color: var(--calm-light);
+    color: var(--soft-embrace);
+}
+
+.accordion-button.active {
+    background-color: var(--soft-embrace);
+    color: var(--white);
+}
+
+.accordion-button .price {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-left: 1rem;
+}
+
+.accordion-button::after {
+    content: '▼';
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+    margin-left: auto;
+}
+
+.accordion-button.active::after {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.accordion-content.active {
+    max-height: 1000px;
+}
+
+.accordion-body {
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+.accordion-body p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.accordion-body p:last-child {
+    margin-bottom: 0;
+}
+
+.accordion-body ul {
+    margin-left: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.accordion-body ul li {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
     h1 {
@@ -667,6 +879,10 @@ a:visited {
 
     .logo-text {
         font-size: 1.3rem;
+    }
+
+    .logo-img {
+        height: 40px;
     }
 
     .nav-menu {
@@ -742,4 +958,3 @@ a:visited {
         height: 20px;
     }
 }
-

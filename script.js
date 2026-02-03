@@ -151,6 +151,54 @@ window.addEventListener('scroll', () => {
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
 
+// ===== COOKIE BANNER FUNCTIONALITY =====
+function acceptCookies() {
+    localStorage.setItem('cookieConsent', 'accepted');
+    closeCookieBanner();
+}
+
+function closeCookieBanner() {
+    const banner = document.getElementById('cookieBanner');
+    if (banner) {
+        banner.classList.add('hidden');
+    }
+}
+
+// Show cookie banner if no consent
+window.addEventListener('load', () => {
+    const consent = localStorage.getItem('cookieConsent');
+    if (!consent) {
+        const banner = document.getElementById('cookieBanner');
+        if (banner) {
+            banner.classList.remove('hidden');
+        }
+    } else {
+        closeCookieBanner();
+    }
+});
+
+// ===== ACCORDION FUNCTIONALITY =====
+const accordionButtons = document.querySelectorAll('.accordion-button');
+accordionButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const serviceId = button.getAttribute('data-service');
+        const content = document.getElementById(serviceId);
+
+        // Close all others
+        accordionButtons.forEach(b => {
+            if (b !== button) {
+                b.classList.remove('active');
+                const id = b.getAttribute('data-service');
+                const c = document.getElementById(id);
+                if (c) c.classList.remove('active');
+            }
+        });
+
+        // Toggle current
+        button.classList.toggle('active');
+        if (content) content.classList.toggle('active');
+    });
+});
+
 // ===== INITIALIZE =====
 console.log('Filipa Ferreira - Website loaded successfully');
-

@@ -6,13 +6,21 @@
     <meta name="description" content="Filipa Ferreira - Psicóloga e Psicoterapeuta. Serviços de psicoterapia individual, terapia de casal, terapia familiar, parentalidade e orientação vocacional." />
     <title>Filipa Ferreira | Psicóloga e Psicoterapeuta</title>
     <link rel="stylesheet" href="styles.css" />
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <span class="logo-text">Filipa Ferreira</span>
+                <img src="images/logo_header.svg" alt="Filipa Ferreira - Psicóloga e Psicoterapeuta" class="logo-img">
             </div>
             <ul class="nav-menu">
                 <li><a href="#sobre-mim" class="nav-link">Sobre Mim</a></li>
@@ -41,11 +49,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Bem-vindo</h1>
+            <img src="images/logo.svg" alt="Filipa Ferreira - Psicóloga e Psicoterapeuta" class="hero-logo-img">
             <p>Um espaço seguro para ouvir, compreender e transformar</p>
-            <svg class="divider-svg" viewBox="0 0 100 20" xmlns="http://www.w3.org/2000/svg">
-                <path d="M 10 10 Q 30 5 50 10 T 90 10" stroke="#d3b5b7" stroke-width="2" fill="none" stroke-linecap="round"/>
-            </svg>
         </div>
     </section>
 
@@ -131,117 +136,147 @@
     <section id="servicos" class="section alternate">
         <div class="container">
             <h2>Serviços</h2>
-            <div class="services-grid">
+            <div class="services-accordion">
                 <!-- Psicoterapia Individual -->
-                <div id="psicoterapia-individual" class="service-card">
-                    <h3>Psicoterapia Individual</h3>
-                    <p>A psicoterapia individual é um espaço seguro, confidencial e acolhedor, criado para que possa olhar para si com mais profundidade, clareza e compaixão. Um lugar onde é possível parar, sentir e compreender o que se passa internamente, sem pressa e sem julgamentos.</p>
-                    <p>Neste processo, olhamos para a pessoa como um todo — a sua história, as relações que a moldaram, as emoções que carrega e as formas que encontrou para lidar com a dor, a insegurança ou o medo. Muitas das dificuldades que surgem no presente estão ligadas a experiências passadas e a padrões emocionais que se foram construindo ao longo do tempo, muitas vezes como forma de proteção.</p>
-                    <p>Ao longo da psicoterapia, trabalhamos para identificar esses padrões, compreender a sua origem e reconhecer as necessidades emocionais que lhes estão associadas. A partir dessa compreensão, é possível desenvolver novas formas de relação consigo próprio e com os outros, mais seguras, flexíveis e ajustadas à realidade atual.</p>
-                    <p>As emoções têm um papel central neste processo. Aprender a reconhecê-las, escutá-las e dar-lhes significado permite reduzir o sofrimento e aumentar a capacidade de resposta às situações do dia a dia. Em terapia, as emoções são acolhidas como sinais importantes, que ajudam a orientar escolhas mais conscientes.</p>
-                    <p>Este trabalho inclui também a atenção às diferentes partes internas que compõem a experiência de cada pessoa — partes que protegem, que se adaptam, que carregam feridas antigas ou que procuram ser cuidadas. Criar espaço para que todas possam ser compreendidas e integradas favorece maior equilíbrio emocional, autoconfiança e autenticidade.</p>
-                    <p>A relação terapêutica é um elemento fundamental deste percurso. Num ambiente de empatia, segurança e respeito pelo seu ritmo, o processo terapêutico torna-se um caminho de crescimento, reparação emocional e construção de sentido, permitindo-lhe viver com maior coerência interna e bem-estar.</p>
-                    <div class="service-price">Valor: <strong>60€</strong> por sessão</div>
+                <div class="accordion-item">
+                    <button class="accordion-button" data-service="psicoterapia-individual">
+                        <span>Psicoterapia Individual</span>
+                        <span class="price">60€/sessão</span>
+                    </button>
+                    <div id="psicoterapia-individual" class="accordion-content">
+                        <div class="accordion-body">
+                            <p>A psicoterapia individual é um espaço seguro, confidencial e acolhedor, criado para que possa olhar para si com mais profundidade, clareza e compaixão. Um lugar onde é possível parar, sentir e compreender o que se passa internamente, sem pressa e sem julgamentos.</p>
+                            <p>Neste processo, olhamos para a pessoa como um todo — a sua história, as relações que a moldaram, as emoções que carrega e as formas que encontrou para lidar com a dor, a insegurança ou o medo. Muitas das dificuldades que surgem no presente estão ligadas a experiências passadas e a padrões emocionais que se foram construindo ao longo do tempo, muitas vezes como forma de proteção.</p>
+                            <p>Ao longo da psicoterapia, trabalhamos para identificar esses padrões, compreender a sua origem e reconhecer as necessidades emocionais que lhes estão associadas. A partir dessa compreensão, é possível desenvolver novas formas de relação consigo próprio e com os outros, mais seguras, flexíveis e ajustadas à realidade atual.</p>
+                            <p>As emoções têm um papel central neste processo. Aprender a reconhecê-las, escutá-las e dar-lhes significado permite reduzir o sofrimento e aumentar a capacidade de resposta às situações do dia a dia. Em terapia, as emoções são acolhidas como sinais importantes, que ajudam a orientar escolhas mais conscientes.</p>
+                            <p>Este trabalho inclui também a atenção às diferentes partes internas que compõem a experiência de cada pessoa — partes que protegem, que se adaptam, que carregam feridas antigas ou que procuram ser cuidadas. Criar espaço para que todas possam ser compreendidas e integradas favorece maior equilíbrio emocional, autoconfiança e autenticidade.</p>
+                            <p>A relação terapêutica é um elemento fundamental deste percurso. Num ambiente de empatia, segurança e respeito pelo seu ritmo, o processo terapêutico torna-se um caminho de crescimento, reparação emocional e construção de sentido, permitindo-lhe viver com maior coerência interna e bem-estar.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Terapia de Casal -->
-                <div id="terapia-casal" class="service-card">
-                    <h3>Terapia de Casal</h3>
-                    <p>A terapia de casal é um espaço seguro e estruturado, pensado para ajudar dois parceiros a compreenderem melhor a sua relação, a forma como comunicam e os padrões que se repetem ao longo do tempo. Muitas vezes, os conflitos não surgem por falta de amor, mas por dificuldades em expressar necessidades emocionais de forma clara e segura.</p>
-                    <p>No acompanhamento terapêutico, olhamos para a relação como um sistema vivo, onde cada pessoa traz a sua história, as suas experiências emocionais e as formas que aprendeu para se proteger e se ligar ao outro. Estas experiências influenciam a maneira como cada parceiro reage perante o conflito, a proximidade, a distância ou a vulnerabilidade.</p>
-                    <p>Grande parte do trabalho passa por identificar padrões de interação que mantêm o sofrimento — como ciclos de crítica, afastamento, defesa ou silêncio — e compreender o que está por detrás dessas reações. Frequentemente, estas respostas estão ligadas a emoções profundas e a necessidades emocionais que não estão a ser reconhecidas ou atendidas dentro da relação.</p>
-                    <p>A terapia ajuda o casal a desenvolver uma comunicação mais consciente e respeitosa, promovendo a escuta ativa, a validação emocional e a expressão de sentimentos de forma mais clara e empática. Ao mesmo tempo, trabalha-se a construção de um vínculo mais seguro, onde ambos se sintam vistos, valorizados e emocionalmente disponíveis um para o outro.</p>
-                    <p>Ao longo do processo, são também explorados padrões relacionais de fundo que cada parceiro traz da sua história pessoal e que influenciam a relação atual — como medos de abandono, dificuldade em confiar, exigência excessiva ou tendência para evitar o conflito. Tornar estes padrões conscientes permite ao casal escolher respostas diferentes e construir novas formas de se relacionar.</p>
-                    <p>A terapia de casal não se centra apenas na resolução de conflitos, mas também no fortalecimento da amizade, da intimidade emocional e do compromisso, ajudando o casal a criar uma relação mais equilibrada, segura e satisfatória.</p>
-                    <div class="service-price">Valor: <strong>70€</strong> por sessão</div>
+                <div class="accordion-item">
+                    <button class="accordion-button" data-service="terapia-casal">
+                        <span>Terapia de Casal</span>
+                        <span class="price">70€/sessão</span>
+                    </button>
+                    <div id="terapia-casal" class="accordion-content">
+                        <div class="accordion-body">
+                            <p>A terapia de casal é um espaço seguro e estruturado, pensado para ajudar dois parceiros a compreenderem melhor a sua relação, a forma como comunicam e os padrões que se repetem ao longo do tempo. Muitas vezes, os conflitos não surgem por falta de amor, mas por dificuldades em expressar necessidades emocionais de forma clara e segura.</p>
+                            <p>No acompanhamento terapêutico, olhamos para a relação como um sistema vivo, onde cada pessoa traz a sua história, as suas experiências emocionais e as formas que aprendeu para se proteger e se ligar ao outro. Estas experiências influenciam a maneira como cada parceiro reage perante o conflito, a proximidade, a distância ou a vulnerabilidade.</p>
+                            <p>Grande parte do trabalho passa por identificar padrões de interação que mantêm o sofrimento — como ciclos de crítica, afastamento, defesa ou silêncio — e compreender o que está por detrás dessas reações. Frequentemente, estas respostas estão ligadas a emoções profundas e a necessidades emocionais que não estão a ser reconhecidas ou atendidas dentro da relação.</p>
+                            <p>A terapia ajuda o casal a desenvolver uma comunicação mais consciente e respeitosa, promovendo a escuta ativa, a validação emocional e a expressão de sentimentos de forma mais clara e empática. Ao mesmo tempo, trabalha-se a construção de um vínculo mais seguro, onde ambos se sintam vistos, valorizados e emocionalmente disponíveis um para o outro.</p>
+                            <p>Ao longo do processo, são também explorados padrões relacionais de fundo que cada parceiro traz da sua história pessoal e que influenciam a relação atual — como medos de abandono, dificuldade em confiar, exigência excessiva ou tendência para evitar o conflito. Tornar estes padrões conscientes permite ao casal escolher respostas diferentes e construir novas formas de se relacionar.</p>
+                            <p>A terapia de casal não se centra apenas na resolução de conflitos, mas também no fortalecimento da amizade, da intimidade emocional e do compromisso, ajudando o casal a criar uma relação mais equilibrada, segura e satisfatória.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Terapia Familiar -->
-                <div id="terapia-familiar" class="service-card">
-                    <h3>Terapia Familiar</h3>
-                    <p>A terapia familiar é um espaço de encontro e diálogo, onde a família é vista como um sistema vivo, em constante transformação. Cada membro influencia e é influenciado pelos restantes, e muitas das dificuldades individuais fazem sentido quando olhadas à luz das relações familiares e do contexto em que surgem.</p>
-                    <p>As famílias atravessam diferentes fases ao longo da vida — nascimento dos filhos, entrada na adolescência, saídas de casa, separações, recomposição familiar, doença, luto — e cada transição exige ajustamentos emocionais e relacionais. Quando estes momentos são vividos com elevada tensão, dor ou falta de recursos, podem surgir conflitos, afastamentos ou sintomas que afetam o bem-estar de todos.</p>
-                    <p>No processo terapêutico, procuramos compreender como a família se organiza, como comunica, que papéis cada elemento ocupa e que padrões de relação se repetem ao longo do tempo. Muitas vezes, existem regras implícitas, lealdades invisíveis ou expectativas herdadas que condicionam a forma como cada pessoa se expressa e se posiciona dentro da família.</p>
-                    <p>A terapia familiar também permite olhar para a história das gerações anteriores, reconhecendo que experiências de perda, trauma, silêncios ou acontecimentos marcantes podem continuar a ter impacto nas gerações atuais. Tornar estas influências visíveis ajuda a família a compreender melhor o presente e a libertar-se de padrões que já não servem.</p>
-                    <p>Um aspeto central do trabalho é dar espaço às diferentes narrativas familiares — as histórias que cada membro conta sobre si, sobre os outros e sobre a família como um todo. Ao escutar e reorganizar estas narrativas, abre-se a possibilidade de criar novos significados, mais integradores e menos centrados no problema.</p>
-                    <p><strong>Ao longo do acompanhamento, a terapia ajuda a:</strong></p>
-                    <ul>
-                        <li>Melhorar a comunicação e o entendimento mútuo</li>
-                        <li>Tornar mais claras as fronteiras, responsabilidades e papéis familiares</li>
-                        <li>Promover relações mais equilibradas e cooperantes</li>
-                        <li>Apoiar a família na construção de soluções ajustadas à sua realidade</li>
-                    </ul>
-                    <p>A terapia familiar oferece um espaço seguro, respeitador e não julgador, onde cada voz é importante e onde a mudança acontece através da compreensão, da empatia e do fortalecimento dos vínculos.</p>
-                    <div class="service-price">Valor: <strong>80€</strong> por sessão</div>
+                <div class="accordion-item">
+                    <button class="accordion-button" data-service="terapia-familiar">
+                        <span>Terapia Familiar</span>
+                        <span class="price">80€/sessão</span>
+                    </button>
+                    <div id="terapia-familiar" class="accordion-content">
+                        <div class="accordion-body">
+                            <p>A terapia familiar é um espaço de encontro e diálogo, onde a família é vista como um sistema vivo, em constante transformação. Cada membro influencia e é influenciado pelos restantes, e muitas das dificuldades individuais fazem sentido quando olhadas à luz das relações familiares e do contexto em que surgem.</p>
+                            <p>As famílias atravessam diferentes fases ao longo da vida — nascimento dos filhos, entrada na adolescência, saídas de casa, separações, recomposição familiar, doença, luto — e cada transição exige ajustamentos emocionais e relacionais. Quando estes momentos são vividos com elevada tensão, dor ou falta de recursos, podem surgir conflitos, afastamentos ou sintomas que afetam o bem-estar de todos.</p>
+                            <p>No processo terapêutico, procuramos compreender como a família se organiza, como comunica, que papéis cada elemento ocupa e que padrões de relação se repetem ao longo do tempo. Muitas vezes, existem regras implícitas, lealdades invisíveis ou expectativas herdadas que condicionam a forma como cada pessoa se expressa e se posiciona dentro da família.</p>
+                            <p>A terapia familiar também permite olhar para a história das gerações anteriores, reconhecendo que experiências de perda, trauma, silêncios ou acontecimentos marcantes podem continuar a ter impacto nas gerações atuais. Tornar estas influências visíveis ajuda a família a compreender melhor o presente e a libertar-se de padrões que já não servem.</p>
+                            <p>Um aspeto central do trabalho é dar espaço às diferentes narrativas familiares — as histórias que cada membro conta sobre si, sobre os outros e sobre a família como um todo. Ao escutar e reorganizar estas narrativas, abre-se a possibilidade de criar novos significados, mais integradores e menos centrados no problema.</p>
+                            <p><strong>Ao longo do acompanhamento, a terapia ajuda a:</strong></p>
+                            <ul>
+                                <li>Melhorar a comunicação e o entendimento mútuo</li>
+                                <li>Tornar mais claras as fronteiras, responsabilidades e papéis familiares</li>
+                                <li>Promover relações mais equilibradas e cooperantes</li>
+                                <li>Apoiar a família na construção de soluções ajustadas à sua realidade</li>
+                            </ul>
+                            <p>A terapia familiar oferece um espaço seguro, respeitador e não julgador, onde cada voz é importante e onde a mudança acontece através da compreensão, da empatia e do fortalecimento dos vínculos.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Terapia para a Parentalidade -->
-                <div id="terapia-parentalidade" class="service-card">
-                    <h3>Terapia para a Parentalidade</h3>
-                    <p>Ser pai ou mãe é uma das experiências mais intensas e transformadoras da vida. Pode ser profundamente bonita — e, ao mesmo tempo, avassaladora.</p>
-                    <p>Se é pai ou mãe de primeira viagem, talvez se sinta inseguro, cansado, cheio de dúvidas e a questionar-se constantemente se está a fazer "o suficiente" ou "da forma certa". Se já tem filhos mais crescidos, pode estar a atravessar fases exigentes: birras, desafios na escola, dificuldades emocionais, conflitos, mudanças no comportamento ou momentos em que sente que perdeu o rumo.</p>
-                    <p>Nada disto significa que esteja a falhar. Significa apenas que cuidar também cansa — e que ninguém nasce a saber ser pai ou mãe.</p>
-                    <p>A terapia para a parentalidade é um espaço de apoio, reflexão e crescimento, pensado para o acompanhar enquanto pai ou mãe, respeitando a sua história, os seus valores e a singularidade da sua família.</p>
-                    <p><strong>Um espaço para pensar a parentalidade com mais calma</strong></p>
-                    <p>Neste acompanhamento, não há receitas prontas nem julgamentos. Há escuta, compreensão e apoio para lidar com os desafios reais do dia a dia. Juntos, trabalhamos para:</p>
-                    <ul>
-                        <li>Compreender melhor o comportamento do seu filho</li>
-                        <li>Ajustar expectativas à fase de desenvolvimento em que ele se encontra</li>
-                        <li>Encontrar formas mais eficazes e respeitosas de colocar limites</li>
-                        <li>Melhorar a comunicação e o vínculo emocional</li>
-                        <li>Reduzir o stress, a culpa e o cansaço emocional</li>
-                    </ul>
-                    <p><strong>Temas que podem ser trabalhados:</strong></p>
-                    <ul>
-                        <li>Definição de limites e regras de forma firme e afetuosa</li>
-                        <li>Gestão de birras, comportamentos desafiantes ou dificuldades emocionais</li>
-                        <li>Comunicação mais clara e empática com os filhos</li>
-                        <li>Apoio ao desenvolvimento emocional, social e escolar</li>
-                        <li>Ajustamento a transições do ciclo de vida (nascimento de irmãos, entrada na escola, adolescência, separações)</li>
-                        <li>Cuidar da relação parental sem perder de vista o bem-estar individual</li>
-                    </ul>
-                    <p><strong>Como funciona o acompanhamento:</strong></p>
-                    <p>O processo é adaptado à realidade de cada família. Pode incluir sessões individuais com os pais, sessões conjuntas ou momentos de reflexão orientada, sempre com foco nas necessidades concretas da criança e dos cuidadores. Ao longo do acompanhamento, são construídas estratégias práticas e personalizadas, pensadas para o dia-a-dia real da família — aquilo que é possível, sustentável e coerente com quem são enquanto pais.</p>
-                    <p><strong>Cuidar da parentalidade é cuidar da família inteira</strong></p>
-                    <p>A terapia para a parentalidade ajuda a fortalecer a relação entre pais e filhos, aumenta a confiança parental e promove um ambiente familiar mais seguro, previsível e afetuoso. Cuidar dos filhos começa, muitas vezes, por cuidar de quem cuida.</p>
-                    <p>Se sente que este é um momento exigente da sua parentalidade, saiba que não precisa de o atravessar sozinho. Estou aqui para caminhar consigo.</p>
-                    <div class="service-price">Valor: <strong>70€</strong> por sessão</div>
+                <div class="accordion-item">
+                    <button class="accordion-button" data-service="terapia-parentalidade">
+                        <span>Terapia para a Parentalidade</span>
+                        <span class="price">70€/sessão</span>
+                    </button>
+                    <div id="terapia-parentalidade" class="accordion-content">
+                        <div class="accordion-body">
+                            <p>Ser pai ou mãe é uma das experiências mais intensas e transformadoras da vida. Pode ser profundamente bonita — e, ao mesmo tempo, avassaladora.</p>
+                            <p>Se é pai ou mãe de primeira viagem, talvez se sinta inseguro, cansado, cheio de dúvidas e a questionar-se constantemente se está a fazer "o suficiente" ou "da forma certa". Se já tem filhos mais crescidos, pode estar a atravessar fases exigentes: birras, desafios na escola, dificuldades emocionais, conflitos, mudanças no comportamento ou momentos em que sente que perdeu o rumo.</p>
+                            <p>Nada disto significa que esteja a falhar. Significa apenas que cuidar também cansa — e que ninguém nasce a saber ser pai ou mãe.</p>
+                            <p>A terapia para a parentalidade é um espaço de apoio, reflexão e crescimento, pensado para o acompanhar enquanto pai ou mãe, respeitando a sua história, os seus valores e a singularidade da sua família.</p>
+                            <p><strong>Um espaço para pensar a parentalidade com mais calma</strong></p>
+                            <p>Neste acompanhamento, não há receitas prontas nem julgamentos. Há escuta, compreensão e apoio para lidar com os desafios reais do dia a dia. Juntos, trabalhamos para:</p>
+                            <ul>
+                                <li>Compreender melhor o comportamento do seu filho</li>
+                                <li>Ajustar expectativas à fase de desenvolvimento em que ele se encontra</li>
+                                <li>Encontrar formas mais eficazes e respeitosas de colocar limites</li>
+                                <li>Melhorar a comunicação e o vínculo emocional</li>
+                                <li>Reduzir o stress, a culpa e o cansaço emocional</li>
+                            </ul>
+                            <p><strong>Temas que podem ser trabalhados:</strong></p>
+                            <ul>
+                                <li>Definição de limites e regras de forma firme e afetuosa</li>
+                                <li>Gestão de birras, comportamentos desafiantes ou dificuldades emocionais</li>
+                                <li>Comunicação mais clara e empática com os filhos</li>
+                                <li>Apoio ao desenvolvimento emocional, social e escolar</li>
+                                <li>Ajustamento a transições do ciclo de vida (nascimento de irmãos, entrada na escola, adolescência, separações)</li>
+                                <li>Cuidar da relação parental sem perder de vista o bem-estar individual</li>
+                            </ul>
+                            <p><strong>Como funciona o acompanhamento:</strong></p>
+                            <p>O processo é adaptado à realidade de cada família. Pode incluir sessões individuais com os pais, sessões conjuntas ou momentos de reflexão orientada, sempre com foco nas necessidades concretas da criança e dos cuidadores. Ao longo do acompanhamento, são construídas estratégias práticas e personalizadas, pensadas para o dia-a-dia real da família — aquilo que é possível, sustentável e coerente com quem são enquanto pais.</p>
+                            <p><strong>Cuidar da parentalidade é cuidar da família inteira</strong></p>
+                            <p>A terapia para a parentalidade ajuda a fortalecer a relação entre pais e filhos, aumenta a confiança parental e promove um ambiente familiar mais seguro, previsível e afetuoso. Cuidar dos filhos começa, muitas vezes, por cuidar de quem cuida.</p>
+                            <p>Se sente que este é um momento exigente da sua parentalidade, saiba que não precisa de o atravessar sozinho. Estou aqui para caminhar consigo.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Orientação Vocacional -->
-                <div id="orientacao-vocacional" class="service-card">
-                    <h3>Orientação Vocacional</h3>
-                    <p>Chegar ao 9.º ou ao 12.º ano e ter de decidir o "próximo passo" pode ser confuso, assustador e até frustrante. É normal ter dúvidas, sentir pressão, medo de errar ou a sensação de que "toda a gente já sabe o que quer", menos tu.</p>
-                    <p><strong>Talvez sintas que:</strong></p>
-                    <ul>
-                        <li>Gostas de várias coisas, mas não sabes qual escolher</li>
-                        <li>Não te identificas com nenhuma opção em concreto</li>
-                        <li>Tens medo de desiludir os outros ou de fazer a escolha errada</li>
-                        <li>Estás cansado de ouvir "isto é uma decisão para a vida toda"</li>
-                    </ul>
-                    <p>A orientação vocacional existe precisamente para isto: para não teres de fazer este caminho sozinho. Aqui, fazemos o caminho juntos, ao teu ritmo.</p>
-                    <p><strong>Como funciona o processo?</strong></p>
-                    <p>Tudo começa com uma primeira conversa contigo. É um momento para te conhecer melhor — quem és, como tens vivido a escola, o que te motiva, o que te preocupa e como imaginas o teu futuro. A presença dos pais nesta fase pode acontecer ou não, dependendo do que for mais adequado para ti.</p>
-                    <p>Depois dessa primeira sessão, o processo continua normalmente ao longo de quatro sessões (em alguns casos, podem ser necessárias mais). Ao longo deste percurso, vais realizar diferentes atividades e provas pensadas para te ajudar a descobrir:</p>
-                    <ul>
-                        <li>O que realmente te interessa e desperta motivação</li>
-                        <li>As áreas onde te sentes mais confortável e confiante</li>
-                        <li>As tuas capacidades e forma de aprender</li>
-                        <li>A maneira como pensas, resolves problemas e tomas decisões</li>
-                    </ul>
-                    <p>Nada disto é sobre "passar ou falhar". É sobre conheceres-te melhor.</p>
-                    <p><strong>No final do processo:</strong></p>
-                    <p>Recebes um relatório claro e organizado, onde está desenhado o teu perfil vocacional. Juntos, vamos construir um projeto académico e/ou profissional, com sugestões de cursos, áreas de estudo e caminhos possíveis que façam sentido para ti — não apenas para o momento atual, mas também para quem és e quem queres vir a ser.</p>
-                    <p><strong>Mais do que dar respostas prontas, este processo ajuda-te a:</strong></p>
-                    <ul>
-                        <li>Ganhar confiança nas tuas escolhas</li>
-                        <li>Reduzir a ansiedade em relação ao futuro</li>
-                        <li>Sentir que tens opções e possibilidades reais</li>
-                        <li>Tomar decisões mais conscientes e seguras</li>
-                    </ul>
-                    <p><strong>Lembra-te:</strong> Não tens de saber tudo agora. Não tens de ter a certeza absoluta. E não tens de decidir sozinho.</p>
-                    <p>A orientação vocacional é um caminho de descoberta — e vamos fazer esse caminho juntos.</p>
-                    <div class="service-price">Valor: Mínimo de 5 sessões — <strong>250€</strong></div>
+                <div class="accordion-item">
+                    <button class="accordion-button" data-service="orientacao-vocacional">
+                        <span>Orientação Vocacional</span>
+                        <span class="price">250€ (mín. 5 sessões)</span>
+                    </button>
+                    <div id="orientacao-vocacional" class="accordion-content">
+                        <div class="accordion-body">
+                            <p>Chegar ao 9.º ou ao 12.º ano e ter de decidir o "próximo passo" pode ser confuso, assustador e até frustrante. É normal ter dúvidas, sentir pressão, medo de errar ou a sensação de que "toda a gente já sabe o que quer", menos tu.</p>
+                            <p><strong>Talvez sintas que:</strong></p>
+                            <ul>
+                                <li>Gostas de várias coisas, mas não sabes qual escolher</li>
+                                <li>Não te identificas com nenhuma opção em concreto</li>
+                                <li>Tens medo de desiludir os outros ou de fazer a escolha errada</li>
+                                <li>Estás cansado de ouvir "isto é uma decisão para a vida toda"</li>
+                            </ul>
+                            <p>A orientação vocacional existe precisamente para isto: para não teres de fazer este caminho sozinho. Aqui, fazemos o caminho juntos, ao teu ritmo.</p>
+                            <p><strong>Como funciona o processo?</strong></p>
+                            <p>Tudo começa com uma primeira conversa contigo. É um momento para te conhecer melhor — quem és, como tens vivido a escola, o que te motiva, o que te preocupa e como imaginas o teu futuro. A presença dos pais nesta fase pode acontecer ou não, dependendo do que for mais adequado para ti.</p>
+                            <p>Depois dessa primeira sessão, o processo continua normalmente ao longo de quatro sessões (em alguns casos, podem ser necessárias mais). Ao longo deste percurso, vais realizar diferentes atividades e provas pensadas para te ajudar a descobrir:</p>
+                            <ul>
+                                <li>O que realmente te interessa e desperta motivação</li>
+                                <li>As áreas onde te sentes mais confortável e confiante</li>
+                                <li>As tuas capacidades e forma de aprender</li>
+                                <li>A maneira como pensas, resolves problemas e tomas decisões</li>
+                            </ul>
+                            <p>Nada disto é sobre "passar ou falhar". É sobre conheceres-te melhor.</p>
+                            <p><strong>No final do processo:</strong></p>
+                            <p>Recebes um relatório claro e organizado, onde está desenhado o teu perfil vocacional. Juntos, vamos construir um projeto académico e/ou profissional, com sugestões de cursos, áreas de estudo e caminhos possíveis que façam sentido para ti — não apenas para o momento atual, mas também para quem és e quem queres vir a ser.</p>
+                            <p><strong>Mais do que dar respostas prontas, este processo ajuda-te a:</strong></p>
+                            <ul>
+                                <li>Ganhar confiança nas tuas escolhas</li>
+                                <li>Reduzir a ansiedade em relação ao futuro</li>
+                                <li>Sentir que tens opções e possibilidades reais</li>
+                                <li>Tomar decisões mais conscientes e seguras</li>
+                            </ul>
+                            <p><strong>Lembra-te:</strong> Não tens de saber tudo agora. Não tens de ter a certeza absoluta. E não tens de decidir sozinho.</p>
+                            <p>A orientação vocacional é um caminho de descoberta — e vamos fazer esse caminho juntos.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -255,7 +290,18 @@
         <div class="container">
             <h2>Onde Estou</h2>
             <div class="location-content">
-                <p>Informação de localização em breve</p>
+                <h3>Consultório em Lisboa</h3>
+                <p><strong>Endereço:</strong> [Rua da Localização, nº XX - Andar XX], Lisboa, Portugal</p>
+                <p><strong>Telefone:</strong> +351 938 985 876</p>
+                <p><strong>Horário de Atendimento:</strong></p>
+                <p>Segunda a Sexta: 10h - 19h<br>
+                Agendamento prévio obrigatório</p>
+
+                <div style="margin-top: 2rem;">
+                    <p style="color: var(--text-light); font-size: 0.9rem;">
+                        <em>Para agendar uma sessão ou esclarecer dúvidas, contacte-me através de WhatsApp, E-mail ou Formulário de Contacto na secção "Contactar".</em>
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -329,8 +375,48 @@
     <section id="insights" class="section">
         <div class="container">
             <h2>Insights</h2>
-            <div class="insights-placeholder">
-                <p>Artigos e insights em breve</p>
+            <div class="services-grid" style="margin-top: 2rem;">
+
+                <!-- Insight 1 -->
+                <div class="service-card" style="display: none;">
+                    <h3>Reconhecer o Burnout: Sinais e Quando Procurar Ajuda</h3>
+                    <p>O burnout é um estado de esgotamento emocional, físico e mental resultado de stress prolongado. Saiba como reconhecer os sinais e quando procurar ajuda profissional.</p>
+                    <p><strong>📅 Publicado em:</strong> 3 de Fevereiro 2026</p>
+                    <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 1rem;"><em>Artigo em desenvolvimento. Contacte-me para saber mais.</em></p>
+                </div>
+
+                <!-- Insight 2 -->
+                <div class="service-card" style="display: none;">
+                    <h3>Comunicação Não-Violenta nos Relacionamentos</h3>
+                    <p>A comunicação não-violenta é uma metodologia que promove empatia e compreensão. Descubra como aplicar esta abordagem para melhorar seus relacionamentos.</p>
+                    <p><strong>📅 Publicado em:</strong> 3 de Fevereiro 2026</p>
+                    <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 1rem;"><em>Artigo em desenvolvimento. Contacte-me para saber mais.</em></p>
+                </div>
+
+                <!-- Insight 3 -->
+                <div class="service-card" style="display: none;">
+                    <h3>Parentalidade Consciente: Estabelecendo Limites com Amor</h3>
+                    <p>Estabelecer limites de forma afetuosa é um dos maiores desafios da parentalidade. Saiba como fazê-lo de forma respeitosa mas firme.</p>
+                    <p><strong>📅 Publicado em:</strong> 3 de Fevereiro 2026</p>
+                    <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 1rem;"><em>Artigo em desenvolvimento. Contacte-me para saber mais.</em></p>
+                </div>
+
+                <!-- Insight 4 -->
+                <div class="service-card" style="display: none;">
+                    <h3>Auto-Compaixão: O Caminho para o Bem-estar Emocional</h3>
+                    <p>A auto-compaixão é a capacidade de ser gentil consigo mesmo em momentos de dificuldade. Explore este conceito fundamental para a saúde mental.</p>
+                    <p><strong>📅 Publicado em:</strong> 3 de Fevereiro 2026</p>
+                    <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 1rem;"><em>Artigo em desenvolvimento. Contacte-me para saber mais.</em></p>
+                </div>
+
+                <!-- Insight 5 -->
+                <div class="service-card" style="display: none;">
+                    <h3>Lidar com Mudanças: Resiliência e Adaptação</h3>
+                    <p>A vida está cheia de mudanças. Aprenda estratégias para desenvolver resiliência e adaptar-se de forma mais saudável aos desafios que surgem.</p>
+                    <p><strong>📅 Publicado em:</strong> 3 de Fevereiro 2026</p>
+                    <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 1rem;"><em>Artigo em desenvolvimento. Contacte-me para saber mais.</em></p>
+                </div>
+
             </div>
         </div>
     </section>
@@ -341,6 +427,17 @@
             <p>&copy; 2026 Filipa Ferreira. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-message">
+            <p>Este website utiliza cookies para melhorar a sua experiência. Ao continuar, você concorda com nossa <a href="#" target="_blank">política de cookies</a>.</p>
+        </div>
+        <div class="cookie-buttons">
+            <button class="cookie-btn cookie-btn-decline" onclick="closeCookieBanner()">Rejeitar</button>
+            <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Aceitar</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
