@@ -402,44 +402,42 @@ strong {
     display: block;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-.content-box {
+.about-teaser {
     background-color: var(--white);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
-.formation-list {
-    list-style: none;
+.about-teaser p {
+    margin-bottom: 1.2rem;
 }
 
-.formation-list li {
-    padding: 1.5rem;
-    border-left: 4px solid var(--soft-embrace);
-    margin-bottom: 1rem;
-    background-color: var(--calm-light);
-    border-radius: 4px;
+.teaser-link {
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--soft-embrace);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
 }
 
-.formation-list strong {
+.teaser-link:hover {
+    color: var(--grounded-comfort);
+}
+
+#a-filipa .a-filipa-details {
+    display: none;
+    margin-top: 1.5rem;
+}
+
+#a-filipa .a-filipa-details.revealed {
     display: block;
-    color: var(--text-dark);
-    margin-bottom: 0.3rem;
-}
-
-.formation-list span {
-    font-size: 0.9rem;
-    color: var(--text-light);
-    font-style: italic;
+    animation: fadeIn 0.4s ease;
 }
 
 /* ===== SERVICES GRID ===== */
@@ -979,6 +977,10 @@ a:visited {
     }
 
     .content-box {
+        padding: 1.5rem;
+    }
+
+    .about-teaser {
         padding: 1.5rem;
     }
 

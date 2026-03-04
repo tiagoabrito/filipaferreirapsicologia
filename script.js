@@ -55,12 +55,69 @@ dropdownToggles.forEach(toggle => {
     });
 });
 
+// ===== SCROLL HELPERS (STICKY HEADER OFFSET) =====
+function getStickyHeaderOffset() {
+    const stickyHeader = document.querySelector('.navbar');
+    const extraGap = 12;
+    return (stickyHeader ? stickyHeader.offsetHeight : 0) + extraGap;
+}
+
+function smoothScrollWithOffset(element) {
+    if (!element) {
+        return;
+    }
+
+    const targetTop = element.getBoundingClientRect().top + window.pageYOffset - getStickyHeaderOffset();
+    window.scrollTo({ top: Math.max(targetTop, 0), behavior: 'smooth' });
+}
+
 // ===== SCROLL TO FORM =====
 function scrollToForm() {
     const formSection = document.getElementById('form-section');
     if (formSection) {
-        formSection.scrollIntoView({ behavior: 'smooth' });
+        smoothScrollWithOffset(formSection);
     }
+}
+
+// ===== ABOUT TEASER REVEAL =====
+const aFilipaRevealButton = document.getElementById('a-filipa-reveal');
+const aFilipaTeaser = document.getElementById('a-filipa-teaser');
+const aFilipaDetails = document.getElementById('a-filipa-details');
+
+function trackAboutTeaserClick(ctaText) {
+    const consent = localStorage.getItem('cookieConsent');
+    if (consent !== 'accepted' || typeof window.gtag !== 'function') {
+        return;
+    }
+
+    window.gtag('event', 'about_teaser_expand', {
+        section: 'sobre_mim_a_filipa',
+        cta_text: ctaText,
+        interaction_type: 'click',
+        timestamp: new Date().toISOString(),
+        page_location: window.location.href,
+        language: document.documentElement.lang || navigator.language || 'pt-PT'
+    });
+}
+
+if (aFilipaRevealButton && aFilipaTeaser && aFilipaDetails) {
+    aFilipaRevealButton.addEventListener('click', () => {
+        if (aFilipaDetails.classList.contains('revealed')) {
+            return;
+        }
+
+        aFilipaDetails.classList.add('revealed');
+        aFilipaTeaser.style.display = 'none';
+
+        const title = aFilipaDetails.querySelector('h3');
+        if (title) {
+            requestAnimationFrame(() => {
+                smoothScrollWithOffset(title);
+            });
+        }
+
+        trackAboutTeaserClick(aFilipaRevealButton.textContent.trim());
+    });
 }
 
 // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
@@ -72,10 +129,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             e.preventDefault();
             const element = document.querySelector(href);
             if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
+                smoothScrollWithOffset(element);
             }
         }
     });
+});
+
+// Keep sticky-header offset when opening a URL with hash
+window.addEventListener('load', () => {
+    if (!window.location.hash) {
+        return;
+    }
+
+    const hashTarget = document.querySelector(window.location.hash);
+    if (hashTarget) {
+        setTimeout(() => smoothScrollWithOffset(hashTarget), 0);
+    }
 });
 
 // ===== FORM VALIDATION & SUBMISSION =====
@@ -154,6 +223,9 @@ window.addEventListener('scroll', () => {
 });
 
 // ===== COOKIE BANNER FUNCTIONALITY =====
+const GA_MEASUREMENT_ID = 'G-NGHXKH4XZZ';
+let analyticsInitialized = false;
+
 function acceptCookies() {
     localStorage.setItem('cookieConsent', 'accepted');
     closeCookieBanner();
@@ -167,17 +239,25 @@ function closeCookieBanner() {
     }
 }
 
+function initGoogleAnalytics() {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function gtag(){ window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', GA_MEASUREMENT_ID);
+    analyticsInitialized = true;
+}
+
 function loadGoogleAnalytics() {
+    if (analyticsInitialized || document.querySelector(`script[data-ga-id="${GA_MEASUREMENT_ID}"]`)) {
+        return;
+    }
+
     const script = document.createElement('script');
     script.async = true;
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+    script.dataset.gaId = GA_MEASUREMENT_ID;
     document.head.appendChild(script);
-    script.onload = function() {
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
-    };
+    script.onload = initGoogleAnalytics;
 }
 
 // Show cookie banner if no consent
