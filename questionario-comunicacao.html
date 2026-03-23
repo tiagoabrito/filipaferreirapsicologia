@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Questionário – Estilos de Comunicação | Filipa Ferreira</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+        :root {
+            --soft-embrace:     #d3b5b7;
+            --quiet-listening:  #f4e9da;
+            --grounded-comfort: #d7b899;
+            --calm-light:       #f4efeb;
+            --accent-rosé:      #e8d5d5;
+            --text-dark:        #4a3f3d;
+            --text-light:       #7a6d6a;
+            --border-light:     #e8ddd8;
+            --white:            #ffffff;
+            /* category accent colours */
+            --clr-assertive:    #6a9e72;
+            --clr-passive:      #b5956e;
+            --clr-aggressive:   #c26a6a;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--calm-light);
+            line-height: 1.6;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.3;
+        }
+
+        /* ── Header ─────────────────────────────────────── */
+        .quiz-header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .quiz-logo { height: 72px; width: auto; }
+
+        /* ── Main layout ─────────────────────────────────── */
+        .quiz-main {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 5rem;
+        }
+
+        /* ── Intro block ─────────────────────────────────── */
+        .quiz-intro {
+            text-align: center;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2.5rem 2rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+        }
+        .quiz-intro h1 {
+            font-size: 1.85rem;
+            margin-bottom: 1rem;
+        }
+        .quiz-intro p {
+            color: var(--text-light);
+            margin-bottom: 0.4rem;
+            font-size: 0.98rem;
+        }
+        .scale-legend {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem 0.8rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-light);
+        }
+        .scale-legend span {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            background: var(--quiet-listening);
+            padding: 0.3rem 0.85rem;
+            border-radius: 20px;
+        }
+
+        /* ── Identity field ──────────────────────────────── */
+        .quiz-identity {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.4rem 1.5rem;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .quiz-identity label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.6rem;
+        }
+        .quiz-identity input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1.5px solid var(--border-light);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: var(--text-dark);
+            background: var(--calm-light);
+            transition: border-color 0.2s;
+        }
+        .quiz-identity input:focus {
+            outline: none;
+            border-color: var(--soft-embrace);
+            background: var(--white);
+        }
+        .required { color: var(--soft-embrace); }
+
+        /* ── Question items ──────────────────────────────── */
+        .question-item {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.4rem 1.5rem;
+            margin-bottom: 0.85rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border-left: 3px solid transparent;
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+        .question-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+        .question-item.unanswered { border-left-color: var(--clr-aggressive); }
+
+        .question-text {
+            font-size: 0.97rem;
+            color: var(--text-dark);
+            margin-bottom: 1.1rem;
+            line-height: 1.55;
+        }
+        .q-number {
+            font-weight: 700;
+            color: var(--soft-embrace);
+            margin-right: 0.3rem;
+        }
+
+        /* ── Scale row ───────────────────────────────────── */
+        .scale-row {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+        .scale-label-end {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            white-space: nowrap;
+            flex-shrink: 0;
+            width: 52px;
+        }
+        .scale-label-end:last-child { text-align: right; }
+
+        .radio-option {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .radio-option input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+            width: 0; height: 0;
+        }
+        .radio-circle {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 2px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-light);
+            background: var(--calm-light);
+            transition: all 0.15s ease;
+            user-select: none;
+        }
+        .radio-option:hover .radio-circle {
+            border-color: var(--soft-embrace);
+            background: var(--accent-rosé);
+            color: var(--text-dark);
+        }
+        .radio-option input:checked + .radio-circle {
+            background: var(--soft-embrace);
+            border-color: var(--soft-embrace);
+            color: var(--white);
+            transform: scale(1.12);
+            box-shadow: 0 2px 8px rgba(211,181,183,0.5);
+        }
+
+        /* ── Submit area ─────────────────────────────────── */
+        .quiz-submit-area {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .validation-msg {
+            color: var(--clr-aggressive);
+            font-size: 0.88rem;
+            margin-bottom: 1rem;
+            min-height: 1.4em;
+        }
+        .btn-primary {
+            background: var(--soft-embrace);
+            color: var(--white);
+            border: none;
+            padding: 1rem 2.8rem;
+            border-radius: 30px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+            box-shadow: 0 4px 14px rgba(211,181,183,0.45);
+        }
+        .btn-primary:hover { background: #c4a1a3; transform: translateY(-1px); }
+        .btn-primary:active { transform: translateY(0); }
+
+        /* ── Results panel ───────────────────────────────── */
+        .results-panel {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+        }
+
+        .results-header {
+            text-align: center;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .results-header img { height: 60px; margin-bottom: 1.2rem; }
+        .results-header h2 { font-size: 1.75rem; margin-bottom: 0.3rem; }
+        .results-subtitle {
+            font-size: 0.88rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+        .results-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        /* ── Score cards ─────────────────────────────────── */
+        .scores-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .score-card {
+            background: var(--calm-light);
+            border-radius: 12px;
+            padding: 1.2rem 1rem;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+        .score-card.score-dominant { border-color: var(--soft-embrace); }
+        .score-card h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.9rem;
+        }
+        .score-bar-wrap {
+            height: 7px;
+            background: var(--border-light);
+            border-radius: 4px;
+            margin-bottom: 0.7rem;
+            overflow: hidden;
+        }
+        .score-bar {
+            height: 100%;
+            border-radius: 4px;
+            width: 0;
+            transition: width 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .score-value {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1;
+            margin: 0;
+        }
+        .score-value span {
+            font-size: 0.82rem;
+            font-weight: 400;
+            color: var(--text-light);
+        }
+
+        /* ── Profile badge ───────────────────────────────── */
+        .profile-badge {
+            background: linear-gradient(135deg, var(--quiet-listening) 0%, var(--accent-rosé) 100%);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .badge-label {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-light);
+            margin-bottom: 0.35rem;
+        }
+        .badge-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        /* ── Interpretations ─────────────────────────────── */
+        .interpretations {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            margin-bottom: 2rem;
+        }
+        .interp-item {
+            padding: 1rem 1.2rem;
+            background: var(--calm-light);
+            border-radius: 10px;
+            border-left: 3px solid var(--border-light);
+        }
+        .interp-item.dominant {
+            background: var(--accent-rosé);
+            border-left-color: var(--soft-embrace);
+        }
+        .interp-item strong {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.3rem;
+        }
+        .interp-item p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* ── Reflection box ──────────────────────────────── */
+        .reflection-box {
+            background: var(--quiet-listening);
+            border-radius: 12px;
+            padding: 1.6rem 1.8rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .reflection-box h3 { font-size: 1.2rem; margin-bottom: 0.7rem; }
+        .reflection-box p { color: var(--text-light); margin-bottom: 0.3rem; font-size: 0.95rem; }
+        .reflection-box p:last-child { margin: 0; }
+
+        /* ── Action buttons ──────────────────────────────── */
+        .results-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-print {
+            background: var(--soft-embrace);
+            color: var(--white);
+            border: none;
+            padding: 0.85rem 2rem;
+            border-radius: 30px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+            box-shadow: 0 4px 12px rgba(211,181,183,0.4);
+        }
+        .btn-print:hover { background: #c4a1a3; transform: translateY(-1px); }
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-light);
+            border: 1.5px solid var(--border-light);
+            padding: 0.85rem 2rem;
+            border-radius: 30px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-secondary:hover { border-color: var(--text-light); color: var(--text-dark); }
+
+        /* ── Footer ──────────────────────────────────────── */
+        .quiz-footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.83rem;
+        }
+
+        /* ── Responsive ──────────────────────────────────── */
+        @media (max-width: 600px) {
+            .scores-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 480px) {
+            .quiz-intro h1 { font-size: 1.5rem; }
+            .scale-label-end { display: none; }
+            .radio-circle { width: 38px; height: 38px; font-size: 0.82rem; }
+            .scale-row { justify-content: space-between; }
+            .badge-value { font-size: 1.7rem; }
+        }
+        @media (max-width: 360px) {
+            .radio-circle { width: 34px; height: 34px; font-size: 0.78rem; }
+        }
+
+        /* ── Print styles ────────────────────────────────── */
+        @media print {
+            body { background: white; }
+            .quiz-header,
+            #quizForm,
+            .quiz-footer        { display: none !important; }
+            .quiz-main          { padding: 0; max-width: 100%; }
+            .results-panel      { box-shadow: none; padding: 1rem 0; border-radius: 0; }
+            .results-actions    { display: none !important; }
+            .scores-grid        { grid-template-columns: repeat(3,1fr) !important; }
+            .score-card         { border: 1px solid #e0d8d5 !important; }
+            .profile-badge      { border: 1px solid #e0d8d5; }
+            .interp-item        { border: 1px solid #e0d8d5; border-left: 3px solid #d3b5b7; }
+            .reflection-box     { border: 1px solid #e0d8d5; }
+            @page               { margin: 1.5cm; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="quiz-header">
+        <img src="images/logo_header.svg"
+             alt="Filipa Ferreira – Psicóloga e Psicoterapeuta"
+             class="quiz-logo">
+    </header>
+
+    <main class="quiz-main">
+
+        <!-- Intro -->
+        <section class="quiz-intro">
+            <h1>Questionário – Estilos de Comunicação</h1>
+            <p>Este questionário pretende identificar o seu estilo de comunicação em contexto profissional.</p>
+            <p>Não existem respostas certas ou erradas. Responda de forma honesta.</p>
+            <div class="scale-legend">
+                <span>1 – Nunca</span>
+                <span>2 – Raramente</span>
+                <span>3 – Algumas vezes</span>
+                <span>4 – Bastantes vezes</span>
+                <span>5 – Muitas vezes</span>
+                <span>6 – Sempre</span>
+            </div>
+        </section>
+
+        <!-- Questionnaire form -->
+        <form id="quizForm" novalidate>
+
+            <!-- Identity -->
+            <div class="quiz-identity">
+                <label for="identity">Nome e equipa <span class="required">*</span></label>
+                <input type="text"
+                       id="identity"
+                       name="identity"
+                       placeholder="Ex: João Silva – Equipa A"
+                       autocomplete="name"
+                       required>
+            </div>
+
+            <!-- Questions injected by JS -->
+            <div id="questionsContainer"></div>
+
+            <div class="quiz-submit-area">
+                <p class="validation-msg" id="validationMsg" role="alert" aria-live="polite"></p>
+                <button type="submit" class="btn-primary">Ver o meu resultado →</button>
+            </div>
+
+        </form>
+
+        <!-- Results (hidden until submission) -->
+        <section id="resultsPanel" class="results-panel" hidden aria-live="polite"></section>
+
+    </main>
+
+    <footer class="quiz-footer">
+        <p>&copy; 2026 Filipa Ferreira. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        /* ─── Data ──────────────────────────────────────────────────────── */
+
+        const QUESTIONS = [
+            // 1–9  · Assertividade (hidden from participant)
+            "Quando alguém está a ser injusto comigo, manifesto-lhe o meu desagrado, aberta e honestamente.",
+            "Consigo facilmente dizer a outra pessoa que não gosto do que ela está a fazer.",
+            "Sou capaz de dizer ao meu chefe, de modo franco e educado, que não concordo com ele.",
+            "Mesmo quando enfrento obstáculos, consigo ser persistente na defesa dos meus pontos de vista, sem me irritar.",
+            "Tenho facilidade em expressar abertamente os meus sentimentos de afeto.",
+            "Tenho facilidade em dizer às outras pessoas o que sinto.",
+            "Consigo explicar limitações da empresa ao cliente de forma clara e respeitosa.",
+            "Quando o cliente está irritado, consigo manter um tom calmo e profissional.",
+            "Sou capaz de dizer \"não\" a um pedido do cliente, apresentando alternativas viáveis.",
+            // 10–18 · Passividade
+            "Tenho dificuldade em criticar abertamente as ideias dos outros.",
+            "É-me difícil dizer \"não quero\" quando alguém insiste.",
+            "Tenho dificuldade em falar com franqueza a pessoas estranhas.",
+            "Se outros me interromperem, mantenho-me em silêncio.",
+            "Empresto coisas aos outros mesmo quando não quero.",
+            "Prefiro manter-me calado do que expressar desagrado.",
+            "Evito contrariar o cliente, mesmo quando sei que ele não tem razão.",
+            "Tenho dificuldade em manter a minha posição quando o cliente insiste muito.",
+            "Para evitar conflito, aceito pedidos do cliente que sei que não são adequados.",
+            // 19–27 · Agressividade
+            "Nas discussões, interrompo as outras pessoas.",
+            "Quando as pessoas são rudes comigo, respondo da mesma forma.",
+            "Respondo na mesma moeda quando falam de forma agressiva comigo.",
+            "Não me importo de ser sarcástico se necessário.",
+            "Reajo com rudeza quando me criticam injustamente.",
+            "Para vencer uma discussão, sou capaz de ser agreste.",
+            "Quando o cliente é rude, sinto vontade de responder no mesmo tom.",
+            "Fico impaciente quando o cliente não entende rapidamente.",
+            "Interrompo o cliente quando acho que ele está a demorar a explicar-se."
+        ];
+
+        // Silent scoring map — indices are 0-based
+        const CATEGORY_MAP = {
+            assertividade: [0,1,2,3,4,5,6,7,8],
+            passividade:   [9,10,11,12,13,14,15,16,17],
+            agressividade: [18,19,20,21,22,23,24,25,26]
+        };
+
+        const PROFILE_LABELS = {
+            assertividade: 'Assertivo',
+            passividade:   'Passivo',
+            agressividade: 'Agressivo'
+        };
+
+        const CATEGORY_COLORS = {
+            assertividade: '#6a9e72',
+            passividade:   '#b5956e',
+            agressividade: '#c26a6a'
+        };
+
+        const INTERPRETATIONS = {
+            assertividade: 'Comunicação equilibrada e eficaz — exprime opiniões e sentimentos de forma clara e direta, respeitando os outros e a si próprio.',
+            passividade:   'Tendência a evitar o confronto — dificuldade em expressar necessidades e em manter posições, o que pode gerar acumulação de tensão ao longo do tempo.',
+            agressividade: 'Tendência a impor e a reagir emocionalmente — respostas que podem criar conflito e dificultar a relação com clientes e colegas.'
+        };
+
+        const SCALE_LABELS = ['Nunca','Raramente','Algumas vezes','Bastantes vezes','Muitas vezes','Sempre'];
+
+        /* ─── Render questions ──────────────────────────────────────────── */
+
+        const container = document.getElementById('questionsContainer');
+
+        QUESTIONS.forEach((text, i) => {
+            const div = document.createElement('div');
+            div.className = 'question-item';
+            div.id = `qi-${i}`;
+
+            const radios = [1,2,3,4,5,6].map(v => `
+                <label class="radio-option" title="${v} – ${SCALE_LABELS[v-1]}">
+                    <input type="radio" name="q${i}" value="${v}">
+                    <span class="radio-circle">${v}</span>
+                </label>
+            `).join('');
+
+            div.innerHTML = `
+                <p class="question-text">
+                    <span class="q-number">${i + 1}.</span> ${esc(text)}
+                </p>
+                <div class="scale-row" role="radiogroup" aria-label="Questão ${i + 1}">
+                    <span class="scale-label-end">Nunca</span>
+                    ${radios}
+                    <span class="scale-label-end">Sempre</span>
+                </div>
+            `;
+            container.appendChild(div);
+        });
+
+        /* ─── Form submit ───────────────────────────────────────────────── */
+
+        document.getElementById('quizForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const identity       = document.getElementById('identity').value.trim();
+            const validationMsg  = document.getElementById('validationMsg');
+
+            // clear previous error highlights
+            document.querySelectorAll('.question-item.unanswered')
+                    .forEach(el => el.classList.remove('unanswered'));
+
+            // validate identity
+            if (!identity) {
+                validationMsg.textContent = 'Por favor, indique o seu nome e equipa antes de continuar.';
+                document.getElementById('identity').focus();
+                return;
+            }
+
+            // find unanswered questions
+            const unanswered = QUESTIONS
+                .map((_, i) => (document.querySelector(`input[name="q${i}"]:checked`) ? null : i))
+                .filter(i => i !== null);
+
+            if (unanswered.length > 0) {
+                unanswered.forEach(i => document.getElementById(`qi-${i}`).classList.add('unanswered'));
+                validationMsg.textContent =
+                    `${unanswered.length} pergunta${unanswered.length > 1 ? 's' : ''} por responder — as perguntas assinaladas a vermelho necessitam de uma resposta.`;
+                document.getElementById(`qi-${unanswered[0]}`)
+                        .scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+            }
+
+            validationMsg.textContent = '';
+
+            // calculate scores
+            const scores = { assertividade: 0, passividade: 0, agressividade: 0 };
+            Object.entries(CATEGORY_MAP).forEach(([cat, indices]) => {
+                indices.forEach(i => {
+                    scores[cat] += parseInt(
+                        document.querySelector(`input[name="q${i}"]:checked`).value
+                    );
+                });
+            });
+
+            // determine dominant profile(s)
+            const maxScore = Math.max(...Object.values(scores));
+            const topCats  = Object.keys(scores).filter(k => scores[k] === maxScore);
+            const profileLabel = topCats.map(c => PROFILE_LABELS[c]).join(' / ');
+
+            showResults(identity, scores, topCats, profileLabel);
+        });
+
+        /* ─── Show results ──────────────────────────────────────────────── */
+
+        function showResults(identity, scores, topCats, profileLabel) {
+            document.getElementById('quizForm').style.display = 'none';
+
+            const MAX   = 54; // 9 questions × 6
+            const panel = document.getElementById('resultsPanel');
+            panel.hidden = false;
+
+            // Build score cards
+            const scoreCards = Object.entries(scores).map(([cat, score]) => {
+                const pct = Math.round((score / MAX) * 100);
+                const dom = topCats.includes(cat) ? ' score-dominant' : '';
+                return `
+                    <div class="score-card${dom}">
+                        <h3 style="color:${CATEGORY_COLORS[cat]}">
+                            ${cap(cat)}
+                        </h3>
+                        <div class="score-bar-wrap">
+                            <div class="score-bar"
+                                 data-width="${pct}"
+                                 style="background:${CATEGORY_COLORS[cat]};">
+                            </div>
+                        </div>
+                        <p class="score-value">${score}<span> / ${MAX}</span></p>
+                    </div>
+                `;
+            }).join('');
+
+            // Build interpretation items
+            const interpItems = Object.entries(INTERPRETATIONS).map(([cat, text]) => {
+                const dom = topCats.includes(cat) ? ' dominant' : '';
+                return `
+                    <div class="interp-item${dom}">
+                        <strong style="color:${CATEGORY_COLORS[cat]}">${cap(cat)}</strong>
+                        <p>${text}</p>
+                    </div>
+                `;
+            }).join('');
+
+            panel.innerHTML = `
+                <div class="results-header">
+                    <img src="images/logo_header.svg" alt="Filipa Ferreira">
+                    <h2>Resultado do Questionário</h2>
+                    <p class="results-subtitle">Estilos de Comunicação – Call Center</p>
+                    <p class="results-name">${esc(identity)}</p>
+                </div>
+
+                <div class="scores-grid">${scoreCards}</div>
+
+                <div class="profile-badge">
+                    <span class="badge-label">Perfil Dominante</span>
+                    <span class="badge-value">${profileLabel}</span>
+                </div>
+
+                <div class="interpretations">${interpItems}</div>
+
+                <div class="reflection-box">
+                    <h3>Reflexão</h3>
+                    <p>Em que situações este estilo aparece mais no seu dia-a-dia?</p>
+                    <p><em>Traga este resultado para a formação.</em></p>
+                </div>
+
+                <div class="results-actions">
+                    <button onclick="window.print()" class="btn-print">🖨️ Imprimir / Guardar</button>
+                    <button onclick="resetQuiz()"    class="btn-secondary">↩ Recomeçar</button>
+                </div>
+            `;
+
+            // Animate score bars (start at 0, animate to final width)
+            panel.querySelectorAll('.score-bar').forEach(bar => {
+                const finalWidth = bar.dataset.width + '%';
+                setTimeout(() => { bar.style.width = finalWidth; }, 120);
+            });
+
+            panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        /* ─── Reset ─────────────────────────────────────────────────────── */
+
+        function resetQuiz() {
+            document.getElementById('quizForm').reset();
+            document.getElementById('quizForm').style.display = '';
+            document.getElementById('validationMsg').textContent = '';
+            document.querySelectorAll('.question-item.unanswered')
+                    .forEach(el => el.classList.remove('unanswered'));
+            const panel = document.getElementById('resultsPanel');
+            panel.hidden = true;
+            panel.innerHTML = '';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        /* ─── Helpers ───────────────────────────────────────────────────── */
+
+        function esc(str) {
+            return str
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
+        }
+
+        function cap(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+    </script>
+</body>
+</html>
+
